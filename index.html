@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Calculator</title>
+<style>
+  h1{
+    text-align: center;
+  }
+
+.container{
+    background-color: rgb(1, 53, 77);
+    width: 40%;
+    height: 60cap;
+    margin-left: 30%;
+    border: 3px solid gray;
+
+    
+  
+}
+
+.container input{
+    padding: 8%;
+    border: 3px solid gray;
+    margin: 4px;
+    border-radius: 30%;
+    margin-left:4%;
+    font-size: 2cap;
+
+
+}
+
+.buttoncontainer {
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.buttoncontainer input{
+    background-color: rgb(196, 252, 191);
+    padding: 2.5cap;
+
+}
+
+
+.result input{
+    
+    width: 70%;
+    border: 3px solid gray;
+    border-radius: 0%;
+    margin-left: 6%;
+    font-size: 4cap;
+    background-color: black;
+    color: white;
+
+
+
+}
+@media (max-width: 480px){
+    .container{
+        height: 100%;
+        width: 100%;
+        margin: 0%;
+    }
+    h1{
+        display: none;
+    }
+
+    .buttoncontainer input{
+    padding: 8%;
+
+}
+}
+</style>
+   
+    
+</head>
+<body>
+
+    <!-- <h1> Simple Calculator</h1> -->
+    <div class="container">
+        <form name="frm">
+           <div class="result"> <input name="result"></div>
+            <br>
+            <div class="buttoncontainer">
+            <input name="1" type="button" value="1" onClick="run(1)">
+            <input name="2" type="button" value="2" onClick="run(2)">
+            <input name="3" type="button" value="3" onClick="run(3)">
+            <br>
+    
+            <input name="4" type="button" value="4" onClick="run(4)">
+            <input name="5" type="button" value="5" onClick="run(5)">
+            <input name="6" type="button" value="6" onClick="run(6)">
+            <br>
+    
+            <input name="7" type="button" value="7" onClick="run(7)">
+            <input name="8" type="button" value="8" onClick="run(8)">
+            <input name="9" type="button" value="9" onClick="run(9)">
+            <br>
+            <input type="button" name="plus" value="+" onClick="runplus()">
+            <input type="button" name="calc" value="=" onClick="evalu()">
+            <input name="0" type="button" value="0" onClick="run(0)">
+            
+            <br>
+            <input type="button" name="minus" value="-" onClick="runminus()">
+            <input type="button" name="divide" value="/" onClick="rundivide()">
+            <input type="button" name="multiply" value="*" onClick="runmultiply()">
+        </div>
+      
+    </div>
+</form>
+
+
+    <script >
+        function run(num) {
+            document.frm.result.value += num;
+        }
+
+        function runplus() {
+            document.frm.result.value += "+";
+        }
+
+        function runminus() {
+            document.frm.result.value += "-";
+        }
+
+        function runmultiply() {
+            document.frm.result.value += "*";
+        }
+
+        function rundivide() {
+            document.frm.result.value += "/";
+        }
+
+        function evalu() {
+            var evalo = eval(document.frm.result.value);
+            document.frm.result.value = evalo;
+        }
+    </script>
+</body>
+</html>
+
